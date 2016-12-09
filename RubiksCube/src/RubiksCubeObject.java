@@ -512,7 +512,7 @@ public class RubiksCubeObject {
 			else{
 				consecutiveMovesTemp = 1;
 			}
-			if (consecutiveMoves == 4){
+			if (consecutiveMoves == 3){
 				//System.out.println("Consecutive moves = " + consecutiveMoves);
 				return false;
 			} 

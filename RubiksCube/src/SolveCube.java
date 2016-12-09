@@ -17,7 +17,7 @@ public class SolveCube {
 		for (int counter = 1; counter < 33; counter++){
 			//Front 4, back 4, left 4, right 4, top 4, bottom 4
 			//int[] input = {1,1,1,1,5,5,5,5,3,3,3,3,2,2,2,2,4,4,4,4,6,6,6,6};
-			int[] input =   {6,4,6,3,2,2,5,1,4,3,5,3,1,3,5,1,2,4,1,2,5,4,6,6};
+			int[] input =   {5,4,6,3,5,1,6,5,2,3,2,1,1,6,5,4,1,2,6,2,3,4,4,3};
 
 			RubiksCubeObject cube = new RubiksCubeObject(input);
 			if (cube.solve(0,0,-1, counter)){

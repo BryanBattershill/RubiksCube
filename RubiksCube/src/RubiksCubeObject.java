@@ -14,18 +14,7 @@ public class RubiksCubeObject {
 		}
 		
 	}
-	public void PS(){
-		int i = 0;
-		int i2 = 0;
-		for (int counter1 = 0; counter1 < 24; counter1++){
-			System.out.println(this._faces[i]._squares[i2]._colour);
-			i2++;
-			if (i2 == 4){
-				i2 = 0;
-				i++;
-			}
-		}
-	}
+
 	private boolean checkCube(){
 		for (int counter = 0; counter < 6; counter++){
 			if (!this._faces[counter].checkFace()){
@@ -52,6 +41,7 @@ public class RubiksCubeObject {
 		}
 	}
 	
+	//All 12 possible moves, program only uses 3
 	public void rotateFace(int face, int direction){
 		int square1;
 		int square2;
@@ -482,20 +472,9 @@ public class RubiksCubeObject {
 				return true;
 			}
 			else if (movesDone == movesToMake){
-				//System.out.println("Moves done = " + movesDone);
-
 				return false;
 			}
-			/*
-			if (counter > 5){
-				face = counter - 6;
-				direction = 1;
-			}
-			else{
-				face = counter;
-				direction = 0;
-			}
-			*/
+
 			direction = 0;
 			if (counter == 0){
 				face = 0;
@@ -513,13 +492,8 @@ public class RubiksCubeObject {
 				consecutiveMovesTemp = 1;
 			}
 			if (consecutiveMoves == 3){
-				//System.out.println("Consecutive moves = " + consecutiveMoves);
 				return false;
 			} 
-			//System.out.println(face + " " + direction + " " + movesDone);
-			//if (face == 0 && direction == 0 && movesDone == 1){
-				//PS();
-			//}
 			
 			rotateFace(face, direction);
 			
@@ -532,7 +506,6 @@ public class RubiksCubeObject {
 					rotateFace(face, 1-direction);			
 			}
 		}
-		//System.out.println("All moves done.");
 		return false;
 	}
 }
